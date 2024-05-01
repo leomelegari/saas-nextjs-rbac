@@ -2,9 +2,9 @@
     "name": "@saas/api",
     "version": "1.0.0",
     "scripts": {
-        "dev": "npm env:load tsx watch src/http/server.ts",
-        "db:migrate": "npm env:load prisma migrate dev",
-        "db:studio": "npm env:load prisma studio",
+        "dev": "npm run env:load tsx watch src/http/server.ts",
+        "db:migrate": "npm run env:load prisma migrate dev",
+        "db:studio": "npm run env:load prisma studio",
         "env:load": "dotenv -e ../../.env --"
     },
     "dependencies": {
