@@ -22,6 +22,7 @@ import { createOrganization } from './routes/orgs/create-organization'
 import { getMembership } from './routes/orgs/get-membership'
 import { getOrganization } from './routes/orgs/get-organization'
 import { getOrganizations } from './routes/orgs/get-organizations'
+import { shutdownOrganization } from './routes/orgs/shutdown-organization'
 import { updateOrganization } from './routes/orgs/update-organization'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -73,9 +74,10 @@ app.register(getMembership)
 app.register(getOrganization)
 app.register(getOrganizations)
 app.register(updateOrganization)
+app.register(shutdownOrganization)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
-  console.log('HTTP server running!')
+  console.log(`HTTP server running at ${env.SERVER_PORT}!`)
 })
 
 //  https://github.com/login/oauth/authorize?client_id=df8011b3816476a842a4&redirect_uri=http://localhost:3000/api/auth/callback&scope=user:email
